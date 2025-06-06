@@ -6,6 +6,10 @@ class SensoresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sensor
         fields = '__all__'
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+
+        return data
 class AmbientesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ambiente
