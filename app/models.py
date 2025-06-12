@@ -36,8 +36,7 @@ class Ambiente(models.Model):
 # Cria um modelo para historico
 class Historico(models.Model):
     valor = models.FloatField()
-    #  $$$$$$$$$$$$$$$$$$$$$$MUDAR FORMATO PARA BATER COM O EXCEL$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-    timestamp = models.IntegerField()
+    timestamp = models.DateTimeField()
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     ambiente = models.ForeignKey(Ambiente, on_delete=models.CASCADE)
 

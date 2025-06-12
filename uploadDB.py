@@ -4,7 +4,7 @@ import pandas as pd
 # Mude para o nome da planilha e edite os nomes dos campos/planilha para bater com o banco de dados
 
 # coloque o nome do arquivo excel que deseja fazer upload em filename
-filename="histórico"
+filename="ambientes"
 # coloque o nome do arquivo de banco de dados em con(conexão) e a extensão de arquivo no arq(arquivo)
 con=sqlite3.connect("db.sqlite3")
 arq=pd.ExcelFile(filename+'.xlsx')

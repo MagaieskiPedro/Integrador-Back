@@ -4,8 +4,8 @@ import openpyxl
 from rest_framework import renderers
 
 SENSOR_DATA_FILE_HEADERS = ["id","sensor","mac_address","unidade_med","latitude","longitude","status"]
-AMBIENTE_DATA_FILE_HEADERS = ["sig","descricao","ni","responsavel"]
-HISTORICO_DATA_FILE_HEADERS = ["valor","timestamp","sensor","ambiente"]
+AMBIENTE_DATA_FILE_HEADERS = ["id","sig","descricao","ni","responsavel"]
+HISTORICO_DATA_FILE_HEADERS = ["id","valor","timestamp","sensor","ambiente"]
 
 # Cria arquivo excel listando dados do SENSOR a partir de tabela com cabeçalho definido em SENSOR_DATA_FILE_HEADERS
 class ExcelSensorDataRenderer(renderers.BaseRenderer):
