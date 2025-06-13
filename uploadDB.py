@@ -1,7 +1,8 @@
 import sqlite3
 import pandas as pd
 # ESTE ARQUIVO É RESPONSAVEL PELO UPLOAD DOS DADOS DAS PLANILHAS PARA O BANCO DE DADOS
-# Mude para o nome da planilha e edite os nomes dos campos/planilha para bater com o banco de dados
+
+# No proprio excel, mude o nome da planilha e edite os nomes dos campos/planilha para bater com o banco de dados (A planilha originalmente se chama planilha1 por exemplo)
 
 # coloque o nome do arquivo excel que deseja fazer upload em filename
 filename="ambientes"

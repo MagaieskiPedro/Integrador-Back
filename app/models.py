@@ -8,6 +8,8 @@ class Usuario(AbstractUser):
         ('A','Administrador')
     ]
     categoria = models.CharField(max_length=1,choices=CATEGORIA,default='C')
+
+    # Ao pesquisar um usuario, ele sera identificado pelo nome ao enves do id (na tela de admin)
     def __str__(self):
         return self.username
 
@@ -21,6 +23,8 @@ class Sensor(models.Model):
     status = models.BooleanField()
     class Meta:
         verbose_name_plural = 'Sensores'
+
+    # Ao pesquisar um Sensor, ele sera identificado pelo nome 
     def __str__(self):
         return self.sensor
 
@@ -30,6 +34,8 @@ class Ambiente(models.Model):
     descricao = models.CharField(max_length=50)
     ni = models.CharField(max_length=50)
     responsavel = models.CharField(max_length=50)
+
+    # Ao pesquisar o ambiente ele será identificado pelo ni(numero de identificação)
     def __str__(self):
         return self.ni
 
@@ -39,6 +45,3 @@ class Historico(models.Model):
     timestamp = models.DateTimeField()
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     ambiente = models.ForeignKey(Ambiente, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.timestamp

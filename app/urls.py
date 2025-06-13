@@ -3,22 +3,17 @@ from . import views
 from .views import SensoresView,AmbientesView,HistoricosView
 from rest_framework import routers
 
+# Instancia router para receber rotas geradas pelo ModelViewSet(Gera CRUD completo com uma unica classe)
 router = routers.DefaultRouter()
+
+# Registra rotas/urls geradas pelo ModelViewSet na instancia de router
 router.register(r"sensores",SensoresView, basename="Sensor")
 router.register(r"ambientes", AmbientesView , basename="Ambiente")
 router.register(r"historicos", HistoricosView , basename="Historico")
 
+# Inclui as urls regisradas em router, e cria urls para os endpoints das views de login e cadastro
 urlpatterns = [
     path("",include(router.urls)),
-
-    #ROTAS COM APIVIEW
-    # path('ambientes/',view=views.AmbientesView.as_view()),
-    # path('historicos/',view=views.HistoricosView.as_view()),
-    # path('sensores/', view=views.SensoresView.as_view()),
-    # path('ambiente/<int:pk>',view=views.AmbienteView.as_view()),
-    # path('historico/<int:pk>', view=views.HistoricoView.as_view()),
-    # path('sensor/<int:pk>', view=views.SensorView.as_view()),
-
     path('login/', view=views.LoginView.as_view()),
     path('cadastro/', view=views.CadastroView.as_view())
 ]

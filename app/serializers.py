@@ -9,6 +9,7 @@ class SensoresSerializer(serializers.ModelSerializer):
         model = Sensor
         fields = '__all__'
 
+
     # cria uma representação dos dados para depois serem usados para gerar um excel    
     def to_representation(self, instance):
         data = super().to_representation(instance)
@@ -21,6 +22,7 @@ class AmbientesSerializer(serializers.ModelSerializer):
         model = Ambiente
         fields = '__all__'
 
+
     # cria uma representação dos dados para depois serem usados para gerar um excel    
     def to_representation(self, instance):
         data = super().to_representation(instance)
@@ -32,6 +34,7 @@ class HistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Historico
         fields = '__all__'
+
 
     # cria uma representação dos dados para depois serem usados para gerar um excel    
     def to_representation(self, instance):
@@ -60,6 +63,7 @@ class CadastroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
         fields = ('username','password','password2','categoria')
+        
     
     # Valida se as senhas enviadas batem
     def validate(self,attrs):
